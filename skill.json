@@ -1,0 +1,34 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hello world",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "help me",
+                        "what can you do"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "hello",
+                        "say hello",
+                        "what's up"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
