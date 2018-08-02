@@ -258,7 +258,7 @@ def cancelBooking(username, password, t_nn):
     dialog_state = get_dialog_state()
     if dialog_state != 'COMPLETED':
         return delegate()
-    t_type=request.intent.slots.t_type.resolutions.resolutionsPerAuthority[1]['values'][0]['value']['name']
+    t_type=request.intent.slots.t_type.resolutions.resolutionsPerAuthority[0]['values'][0]['value']['name']
     u_id_alexa=username.lower();
     pwd=password.lower();
     con = sqlite3.connect("tripdb.db")
