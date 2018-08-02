@@ -25,7 +25,7 @@ def bookingType():
     if dialog_state != 'COMPLETED':
         return delegate()
     global t_type
-    t_type=request.intent.slots.t_type.resolutions.resolutionsPerAuthority[1]['values'][0]['value']['name']
+    t_type=request.intent.slots.t_type.resolutions.resolutionsPerAuthority[0]['values'][0]['value']['name']
     from_city=request.intent.slots.from_city.resolutions.resolutionsPerAuthority[0]['values'][0]['value']['name']
     to_city=request.intent.slots.to_city.resolutions.resolutionsPerAuthority[0]['values'][0]['value']['name']
     #global user_id_alexa
