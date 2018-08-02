@@ -293,7 +293,7 @@ def showBooking(username, password, name, address, email):
     pwd=password.lower();
     con = sqlite3.connect("tripdb.db")
     cur = con.cursor()
-    cur.execute("insert into user (user_id, pwd, name, address, email_id) values (?,?,?,?,?)", (username,password,name, address, email))
+    cur.execute("insert into user (user_id, pwd, name, address, email_id) values (?,?,?,?,?)", (u_id_alexa,pwd,name,address,email))
     con.commit()
     return question("You have created your account successfully.")
 
