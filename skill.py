@@ -194,7 +194,7 @@ def TravelDetails(username, password, t_nn):
         else:
             return question("Password is wrong. Please Try again.")
     else:
-        return question("Username does not exist. Create new id and try again.")
+        return question("Username does not exist. Create new account and try again.")
 
 
 @ask.intent('showBooking')
@@ -249,7 +249,7 @@ def showBooking(username, password):
         else:
             return question("Password is wrong. Please Try again.")
     else:
-        return question("Username does not exist.")
+        return question("Username does not exist. Create new account. ")
 
 
 
@@ -281,7 +281,21 @@ def cancelBooking(username, password, t_nn):
         else:
             return question("Password is wrong. Please Try again.")
     else:
-        return question("Username does not exist.")
+        return question("Username does not exist. Create new account.")
+
+
+@ask.intent('newAccount')
+def showBooking(username, password, name, address, email):
+    dialog_state = get_dialog_state()
+    if dialog_state != 'COMPLETED':
+        return delegate()
+    u_id_alexa=username.lower();
+    pwd=password.lower();
+    con = sqlite3.connect("tripdb.db")
+    cur = con.cursor()
+    cur.execute("insert into user (user_id, pwd, name, address, email_id) values (?,?,?,?,?)", (username,password,name, address, email))
+    con.commit()
+    return question("You have created your account successfully.")
 
 
 @ask.intent('AMAZON.HelpIntent')
